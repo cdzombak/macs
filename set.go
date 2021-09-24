@@ -75,6 +75,6 @@ func (s *Set) AddAllFrom(other *Set) {
 	}
 }
 
-func EmptyMACSet() *Set {
+func EmptySet() *Set {
 	return &Set{}
 }

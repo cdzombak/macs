@@ -6,14 +6,14 @@ import (
 )
 
 func TestEmptyMACSet(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	if set.Len() != 0 {
 		t.Error("empty set should have length 0")
 	}
 }
 
 func TestMACSetBasics(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	set.Add(MustParseMAC("78:4f:43:87:9e:f4"))
 	set.Add(MustParseMAC("78:4F:43:87:9E:F4"))
 	set.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
@@ -39,7 +39,7 @@ func TestMACSetBasics(t *testing.T) {
 }
 
 func TestMACSetAll(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	set.Add(MustParseMAC("78:4F:43:87:9E:F4"))
 	set.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
 	set.Add(MustParseMAC("66:66:66:66:66:66"))
@@ -52,12 +52,12 @@ func TestMACSetAll(t *testing.T) {
 }
 
 func TestMACSetAddAll(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	set.Add(MustParseMAC("78:4F:43:87:9E:F4"))
 	set.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
 	set.Add(MustParseMAC("66:66:66:66:66:66"))
 
-	set2 := EmptyMACSet()
+	set2 := EmptySet()
 	set2.Add(MustParseMAC("00:11:22:33:22:11"))
 	set2.AddAllFrom(set)
 
@@ -70,7 +70,7 @@ func TestMACSetAddAll(t *testing.T) {
 }
 
 func TestMACSetJSON(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	set.Add(MustParseMAC("78:4F:43:87:9E:F4"))
 	set.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
 	set.Add(MustParseMAC("66:66:66:66:66:66"))
@@ -103,7 +103,7 @@ func TestMACSetJSON(t *testing.T) {
 }
 
 func TestMACSetEmptyJSON(t *testing.T) {
-	set := EmptyMACSet()
+	set := EmptySet()
 	jsonBytes, err := set.MarshalJSON()
 	if err != nil {
 		t.Error("marshaling must not fail")

@@ -62,6 +62,6 @@ func (a *Addr) NetHardwareAddr() net.HardwareAddr {
 	return a.addr
 }
 
-func HardwareAddrFromNet(addr net.HardwareAddr) *Addr {
+func AddrFromNet(addr net.HardwareAddr) *Addr {
 	return &Addr{addr: addr}
 }

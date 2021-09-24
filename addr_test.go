@@ -69,7 +69,7 @@ func TestNetHardwareAddrCompat(t *testing.T) {
 		t.Error("net.Addr should be the same")
 	}
 
-	macFromNetAddr := HardwareAddrFromNet(netAddr)
+	macFromNetAddr := AddrFromNet(netAddr)
 	if macFromNetAddr.String() != mac.String() {
 		t.Error("net.Addr should be the same")
 	}
