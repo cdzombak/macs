@@ -78,3 +78,25 @@ func (s *Set) AddAllFrom(other *Set) {
 func EmptySet() *Set {
 	return &Set{}
 }
+
+func Intersection(s1, s2 *Set) *Set {
+	retv := EmptySet()
+	for _, mac := range s1.All() {
+		if s2.Contains(mac) {
+			retv.Add(mac)
+		}
+	}
+	for _, mac := range s2.All() {
+		if s1.Contains(mac) {
+			retv.Add(mac)
+		}
+	}
+	return retv
+}
+
+func Union(s1, s2 *Set) *Set {
+	retv := EmptySet()
+	retv.AddAllFrom(s1)
+	retv.AddAllFrom(s2)
+	return retv
+}

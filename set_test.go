@@ -120,3 +120,27 @@ func TestMACSetEmptyJSON(t *testing.T) {
 		t.Error("set2 must have length 0")
 	}
 }
+
+func TestMACSetIntersection(t *testing.T) {
+	set1 := EmptySet()
+	set1.Add(MustParseMAC("78:4f:43:87:9e:f4"))
+	set2 := EmptySet()
+	set2.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
+	set2.Add(MustParseMAC("78:4f:43:87:9e:f4"))
+	intersection := Intersection(set1, set2)
+	if intersection.Len() != 1 {
+		t.Error("intersection should only contain common elements")
+	}
+}
+
+func TestMACSetUnion(t *testing.T) {
+	set1 := EmptySet()
+	set1.Add(MustParseMAC("78:4f:43:87:9e:f4"))
+	set2 := EmptySet()
+	set2.Add(MustParseMAC("de:ad:be:ef:aa:bb"))
+	set2.Add(MustParseMAC("78:4f:43:87:9e:f4"))
+	union := Union(set1, set2)
+	if union.Len() != 2 {
+		t.Error("union should contain all elements, once")
+	}
+}
