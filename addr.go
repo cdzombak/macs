@@ -41,7 +41,7 @@ func (a *Addr) String() string {
 
 // Equals returns true if the MAC address is equal to the given MAC address.
 func (a *Addr) Equals(other *Addr) bool {
-	return bytes.Compare(a.addr, other.addr) == 0
+	return bytes.Equal(a.addr, other.addr)
 }
 
 // MarshalJSON marshals the MAC address to JSON.

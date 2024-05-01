@@ -13,7 +13,7 @@ type Set struct {
 // MarshalJSON marshals the set to a JSON array of strings.
 func (s *Set) MarshalJSON() ([]byte, error) {
 	keys := make([]string, 0, len(s.macs))
-	for k, _ := range s.macs {
+	for k := range s.macs {
 		keys = append(keys, k)
 	}
 	return json.Marshal(keys)
