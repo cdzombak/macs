@@ -1,3 +1,3 @@
 module github.com/cdzombak/macs
 
-go 1.17
+go 1.22
