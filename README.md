@@ -1,5 +1,7 @@
 # `github.com/cdzombak/macs`
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/cdzombak/macs.svg)](https://pkg.go.dev/github.com/cdzombak/macs)
+
 Golang MAC addresses & MAC address set which support JSON [un]marshaling.
 
 **Documentation:** [pkg.go.dev/github.com/cdzombak/macs](https://pkg.go.dev/github.com/cdzombak/macs)
