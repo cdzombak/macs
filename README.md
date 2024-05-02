@@ -1,4 +1,4 @@
-# github.com/cdzombak/macs
+# `github.com/cdzombak/macs`
 
 Golang MAC addresses & MAC address set which support JSON [un]marshaling.
 
